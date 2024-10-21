@@ -7,7 +7,7 @@ const petInfoCollection = firestore().collection('petInfo');
 //Обращение к Firebase создает новую запись (новое объявление)
 export const createNewUserUser = async ({name, price, description, year, type, uid, image}) => {
   petInfoCollection
-    .add({name, price, description, year, type, uid, image})
+    .add({name, price, description, years: year, type, uid, image})
     .then(() => console.log('order added'))
 }
 

@@ -23,7 +23,7 @@ export const MainScreen = () => {
   const [petArray, setPetArray] = useState([]);
   const [filter, setFilter] = useState(
     route?.params
-    || {"oldAt": "0", "oldFrom": "0", "priceAt": "0", "priceFrom": "0"}
+    || {"oldAt": "0", "oldFrom": "100", "priceAt": "0", "priceFrom": "1000000"}
   );
 
   //получения всех питомцев при изменение состояния переменной фильтра

@@ -50,6 +50,7 @@ export default function AuthorizationScreen () {
 
         await AsyncStorage.setItem('uid', uid, async () => {
           navigation.navigate('TabStack')
+          clearState()
         })
       })
       .catch(error => {

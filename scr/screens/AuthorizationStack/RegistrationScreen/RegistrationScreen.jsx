@@ -51,6 +51,7 @@ export default function RegistrationScreen () {
         await createNewUserUser(email, uid)
         await AsyncStorage.setItem('uid', uid)
         navigation.navigate('TabStack')
+        clearState()
       })
       .catch(error => {
         //отлавливается ошибка и выводится модальное окно с ней

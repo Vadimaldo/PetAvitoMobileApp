@@ -36,6 +36,14 @@ export const AddOrder = () => {
     fetchCategory();
   }, []);
 
+  const clearState = () => {
+    setName('')
+    setPrice('')
+    setDescription('')
+    setYear('')
+    setType('')
+  }
+
   //Функция добавление объявления по кнопке
   const handleAddOrder = async () => {
     const uid = await AsyncStorage.getItem("uid");
@@ -43,10 +51,10 @@ export const AddOrder = () => {
     if (!!uid) {
       //Функция вызова добавление новой записи в коллекцию объявлений
       await createNewUserUser({name, price, description, year, type, uid, image});
-    } else {
-      //Переход на экран профиля, для авторизации
-      navigation.navigate('ProfileStack')
+      clearState()
     }
+
+    navigation.navigate('ProfileStack')
   }
 
   return (
